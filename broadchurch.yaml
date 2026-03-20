@@ -16,7 +16,7 @@ gateway:
   url: "https://broadchurch-portal-194773164895.us-central1.run.app"
 
 query_server:
-  url: "https://query.pip.sbox.g.lovelace.ai"
+  url: "https://query.news.sbox.g.lovelace.ai"
   audience: "queryserver:api"
 
 auth:
