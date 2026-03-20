@@ -1,0 +1,26 @@
+# Broadchurch project configuration
+# Auto-generated during tenant provisioning.
+
+gcp:
+  project: broadchurch
+  region: us-central1
+  staging_bucket: broadchurch-agent-staging
+
+tenant:
+  project_name: "leah-mcp-test"
+  display_name: "leah-mcp-test"
+  org_id: "org_8yzWylcs6B05d7yi"
+  service_account: "tenant-8yzwylcs6b05d7yi@broadchurch.iam.gserviceaccount.com"
+
+gateway:
+  url: "https://broadchurch-portal-194773164895.us-central1.run.app"
+
+query_server:
+  url: "https://query.news.sbox.g.lovelace.ai"
+  audience: "queryserver:api"
+
+auth:
+  client_id: "IokGh7CMlTebMEttTpsC538BKmaLsVAZ"
+  audience: "queryserver:api"
+
+agents: {}
