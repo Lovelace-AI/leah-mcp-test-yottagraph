@@ -61,15 +61,15 @@ See `.env.example` for the full list.
 
 ## Project Structure
 
-| Directory      | Contents                                              | Deployed to            |
-| -------------- | ----------------------------------------------------- | ---------------------- |
-| `pages/`       | Nuxt pages (file-based routing)                       | Vercel (with app)      |
-| `components/`  | Vue components                                        | Vercel (with app)      |
-| `composables/` | Vue composables (auto-imported by Nuxt)               | Vercel (with app)      |
-| `utils/`       | Utility functions (NOT auto-imported)                 | Vercel (with app)      |
-| `server/`      | Nitro API routes (KV storage, avatar proxy)           | Vercel (with app)      |
-| `agents/`      | Python ADK agents (each subdirectory is deployable)   | Vertex AI Agent Engine |
-| `mcp-servers/` | Python MCP servers (each subdirectory is deployable)  | Cloud Run              |
+| Directory      | Contents                                             | Deployed to            |
+| -------------- | ---------------------------------------------------- | ---------------------- |
+| `pages/`       | Nuxt pages (file-based routing)                      | Vercel (with app)      |
+| `components/`  | Vue components                                       | Vercel (with app)      |
+| `composables/` | Vue composables (auto-imported by Nuxt)              | Vercel (with app)      |
+| `utils/`       | Utility functions (NOT auto-imported)                | Vercel (with app)      |
+| `server/`      | Nitro API routes (KV storage, avatar proxy)          | Vercel (with app)      |
+| `agents/`      | Python ADK agents (each subdirectory is deployable)  | Vertex AI Agent Engine |
+| `mcp-servers/` | Python MCP servers (each subdirectory is deployable) | Cloud Run              |
 
 ### Directories populated by `npm install`
 

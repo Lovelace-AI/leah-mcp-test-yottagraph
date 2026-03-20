@@ -12,6 +12,7 @@ Monitor SEC filings for a list of companies. Users configure which companies to 
 I want to track SEC filings (10-K, 10-Q, 8-K, etc.) for a set of companies. I should be able to add companies to a tracking list, see a feed of their recent filings sorted by date, and click through to filing details.
 
 Key features:
+
 - Company tracking list (persist via KV)
 - Filing feed showing form type, date, and description
 - Filter by filing type (10-K, 10-Q, 8-K, etc.)
@@ -19,10 +20,10 @@ Key features:
 
 ## Configuration
 
-| Setting        | Value                                       |
-| -------------- | ------------------------------------------- |
-| Authentication | Auth0                                       |
-| Query Server   | https://query.news.prod.g.lovelace.ai       |
+| Setting        | Value                                 |
+| -------------- | ------------------------------------- |
+| Authentication | Auth0                                 |
+| Query Server   | https://query.news.prod.g.lovelace.ai |
 
 ## Pages
 
@@ -34,6 +35,7 @@ Description: Main page with two panels. Left: tracked companies (editable list).
 Implementation status: Not started
 
 Details:
+
 - Company list stored in KV via `Pref<string[]>` (NEIDs)
 - Filings discovered via `getSchema()` to find filing-related flavors and PIDs
 - Filing data via `getPropertyValues()` for each tracked company
@@ -45,6 +47,7 @@ Details:
 ### Filing entity discovery
 
 Filing entities are linked to company entities via `data_nindex` properties. The workflow:
+
 1. Get the company's NEID (from the tracking list)
 2. Use `findEntities()` to find filings related to that company
 3. Use `getPropertyValues()` to get filing details (date, type, description)

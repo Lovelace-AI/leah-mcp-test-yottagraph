@@ -525,7 +525,6 @@ NUXT_PUBLIC_USER_NAME=${process.env.USER || 'local-user'}
 `;
     }
 
-
     fs.writeFileSync(envPath, envContent);
     console.log('✅ Created .env file');
 
@@ -814,9 +813,12 @@ function extractAetherInstructions() {
         fs.mkdirSync(tempDir, { recursive: true });
 
         // Download package
-        execSync(`npm pack @yottagraph-app/aether-instructions@latest --pack-destination "${tempDir}"`, {
-            stdio: 'pipe',
-        });
+        execSync(
+            `npm pack @yottagraph-app/aether-instructions@latest --pack-destination "${tempDir}"`,
+            {
+                stdio: 'pipe',
+            }
+        );
 
         // Find and extract tarball
         const tarball = fs.readdirSync(tempDir).find((f) => f.endsWith('.tgz'));
@@ -835,7 +837,11 @@ function extractAetherInstructions() {
         // Delete files from previous install using manifest (also cleans up
         // legacy aether_* prefixed files from older package versions)
         if (fs.existsSync(manifestPath)) {
-            const oldFiles = fs.readFileSync(manifestPath, 'utf-8').trim().split('\n').filter(Boolean);
+            const oldFiles = fs
+                .readFileSync(manifestPath, 'utf-8')
+                .trim()
+                .split('\n')
+                .filter(Boolean);
             for (const rel of oldFiles) {
                 const target = path.join(cursorDir, rel);
                 if (fs.existsSync(target)) {
@@ -904,7 +910,9 @@ function extractAetherInstructions() {
         fs.rmSync(tempDir, { recursive: true, force: true });
 
         console.log(`✅ Installed @yottagraph-app/aether-instructions@${version}`);
-        console.log(`   ${rulesCount} rules, ${commandsCount} commands, ${skillsCount} skill directories`);
+        console.log(
+            `   ${rulesCount} rules, ${commandsCount} commands, ${skillsCount} skill directories`
+        );
     } catch (error) {
         console.log('⚠️  Could not install Aether instructions: ' + error.message);
         console.log('   You can install them later by running /update_instructions');
@@ -976,11 +984,17 @@ async function generateMcpJson(gatewayUrl, tenantId) {
     if (useGateway) {
         const extra = Object.keys(mcpServers).length - platformServers.length;
         const suffix = extra > 0 ? ` + ${extra} tenant-deployed` : '';
-        console.log(`✅ Created .cursor/mcp.json (${platformServers.length} platform servers${suffix} via portal gateway — no token needed).`);
+        console.log(
+            `✅ Created .cursor/mcp.json (${platformServers.length} platform servers${suffix} via portal gateway — no token needed).`
+        );
     } else {
         console.log('✅ Created .cursor/mcp.json (Lovelace MCP servers — direct URLs).');
-        console.log('   ⚠️  MCP servers require AUTH0_M2M_DEV_TOKEN as a shell environment variable.');
-        console.log('   If you have broadchurch.yaml, re-run init to use the portal proxy instead (no token needed).');
+        console.log(
+            '   ⚠️  MCP servers require AUTH0_M2M_DEV_TOKEN as a shell environment variable.'
+        );
+        console.log(
+            '   If you have broadchurch.yaml, re-run init to use the portal proxy instead (no token needed).'
+        );
     }
 }
 
@@ -1027,10 +1041,16 @@ async function runLocalInit() {
             `NUXT_PUBLIC_APP_ID=${appId}`,
             `NUXT_PUBLIC_APP_NAME="${displayName}"`,
             `NUXT_PUBLIC_USER_NAME=dev-user`,
-            queryServer ? `NUXT_PUBLIC_QUERY_SERVER_ADDRESS=${queryServer}` : '# NUXT_PUBLIC_QUERY_SERVER_ADDRESS=',
+            queryServer
+                ? `NUXT_PUBLIC_QUERY_SERVER_ADDRESS=${queryServer}`
+                : '# NUXT_PUBLIC_QUERY_SERVER_ADDRESS=',
             gatewayUrl ? `NUXT_PUBLIC_GATEWAY_URL=${gatewayUrl}` : '# NUXT_PUBLIC_GATEWAY_URL=',
-            tenantOrgId ? `NUXT_PUBLIC_TENANT_ORG_ID=${tenantOrgId}` : '# NUXT_PUBLIC_TENANT_ORG_ID=',
-            auth0ClientId ? `NUXT_PUBLIC_AUTH0_CLIENT_ID=${auth0ClientId}` : '# NUXT_PUBLIC_AUTH0_CLIENT_ID=',
+            tenantOrgId
+                ? `NUXT_PUBLIC_TENANT_ORG_ID=${tenantOrgId}`
+                : '# NUXT_PUBLIC_TENANT_ORG_ID=',
+            auth0ClientId
+                ? `NUXT_PUBLIC_AUTH0_CLIENT_ID=${auth0ClientId}`
+                : '# NUXT_PUBLIC_AUTH0_CLIENT_ID=',
             '',
         ];
         fs.writeFileSync(envPath, lines.join('\n'));

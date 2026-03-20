@@ -1,0 +1,48 @@
+---
+description: Warns users not to modify aether_ prefixed files in .cursor/
+globs:
+  - .cursor/**/aether_*
+alwaysApply: false
+---
+
+# Aether Instructions Warning
+
+**You are editing a file managed by the `@yottagraph-app/aether-instructions` package.**
+
+Files prefixed with `aether_` are automatically installed and updated by the
+Aether instructions system. They will be **overwritten** when you run
+`/aether_update_instructions`.
+
+## Do Not
+
+- Modify existing `aether_*` files directly (changes will be lost on update)
+- Create new files with the `aether_` prefix (they will be deleted on update)
+
+## To Customize
+
+If you need to modify the behavior of an `aether_*` rule or command:
+
+1. **Copy** the file to a new name **without** the `aether_` prefix
+2. Make your changes to the copy
+3. Your copy will not be affected by instruction updates
+
+Example:
+
+```bash
+# Copy the rule you want to customize
+cp .cursor/rules/aether_api.mdc .cursor/rules/api_custom.mdc
+
+# Edit your copy
+# Your customizations in api_custom.mdc are preserved across updates
+```
+
+## Why This Matters
+
+The `aether_` prefix creates a clear namespace:
+- **`aether_*` files** = Package-managed, updated automatically
+- **Other files** = Your custom rules/commands, never touched
+
+This allows you to:
+- Receive rule updates without losing your customizations
+- Know at a glance which files are yours vs. package-provided
+- Safely extend the system without conflicts

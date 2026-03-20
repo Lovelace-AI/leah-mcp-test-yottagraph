@@ -12,6 +12,7 @@ A focused app for tracking a set of companies over time. Users build a watchlist
 I want to build an app where I can maintain a list of companies I'm interested in, and see a feed of recent news and sentiment about those companies. Think of it as a personalized news dashboard for company monitoring.
 
 Key features:
+
 - Add/remove companies from a watchlist (persist across sessions)
 - See recent news articles mentioning watched companies
 - See sentiment trends for each company
@@ -19,10 +20,10 @@ Key features:
 
 ## Configuration
 
-| Setting        | Value                                       |
-| -------------- | ------------------------------------------- |
-| Authentication | Auth0                                       |
-| Query Server   | https://query.news.prod.g.lovelace.ai       |
+| Setting        | Value                                 |
+| -------------- | ------------------------------------- |
+| Authentication | Auth0                                 |
+| Query Server   | https://query.news.prod.g.lovelace.ai |
 
 ## Pages
 
@@ -34,6 +35,7 @@ Description: The main (and only) page. Left panel has the editable watchlist; ri
 Implementation status: Not started
 
 Details:
+
 - Watchlist stored in KV via `Pref<string[]>` (array of NEIDs)
 - News fetched via `useElementalClient()` for each watched entity
 - Sentiment via `elemental_graph_sentiment` or REST equivalent

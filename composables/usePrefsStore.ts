@@ -188,7 +188,7 @@ async function _initializePrefsStore() {
         if (!status.available) {
             console.warn(
                 '[Pref] KV not configured — preferences will use defaults and will not persist across refreshes. ' +
-                    'Set KV_REST_API_URL and KV_REST_API_TOKEN for persistence.',
+                    'Set KV_REST_API_URL and KV_REST_API_TOKEN for persistence.'
             );
         }
     } catch {

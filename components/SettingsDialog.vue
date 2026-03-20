@@ -17,10 +17,13 @@
                         <h3 class="text-h6 mb-2">Server Configuration</h3>
                         <div class="mt-3">
                             <div class="text-body-2 mb-1">Current Query Server:</div>
-                            <code class="text-caption">{{ currentQueryServer || 'Not configured' }}</code>
+                            <code class="text-caption">{{
+                                currentQueryServer || 'Not configured'
+                            }}</code>
                         </div>
                         <div class="text-caption text-medium-emphasis mt-3">
-                            Use <code>/configure_query_server</code> in Cursor to change the Query Server address, or update it in the Broadchurch Portal.
+                            Use <code>/configure_query_server</code> in Cursor to change the Query
+                            Server address, or update it in the Broadchurch Portal.
                         </div>
                     </v-col>
                 </v-row>

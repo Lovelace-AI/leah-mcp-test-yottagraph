@@ -15,8 +15,8 @@
                         <div>
                             <div class="step-title">Describe what you want</div>
                             <div class="step-desc">
-                                Edit <code>DESIGN.md</code> with your project vision. The
-                                AI agent reads this first to understand what to build.
+                                Edit <code>DESIGN.md</code> with your project vision. The AI agent
+                                reads this first to understand what to build.
                             </div>
                         </div>
                     </div>
@@ -25,8 +25,8 @@
                         <div>
                             <div class="step-title">Build it</div>
                             <div class="step-desc">
-                                Run <code>/build_my_app</code> in Cursor. The agent will
-                                design and implement your app based on the brief.
+                                Run <code>/build_my_app</code> in Cursor. The agent will design and
+                                implement your app based on the brief.
                             </div>
                         </div>
                     </div>
@@ -36,8 +36,8 @@
                             <div class="step-title">Deploy</div>
                             <div class="step-desc">
                                 Push to main to auto-deploy on Vercel. Use
-                                <code>/deploy_agent</code> or <code>/deploy_mcp</code> for
-                                backend services.
+                                <code>/deploy_agent</code> or <code>/deploy_mcp</code> for backend
+                                services.
                             </div>
                         </div>
                     </div>

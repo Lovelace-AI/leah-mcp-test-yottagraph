@@ -12,6 +12,7 @@ A search-and-explore tool for the Lovelace Knowledge Graph. Users search for any
 I want to build an entity exploration tool. The user types a name (like "Apple" or "Elon Musk"), gets matched to the right entity, and then sees a rich dashboard with everything we know about that entity -- properties, related entities, recent events, and news mentions.
 
 Key features:
+
 - Entity search with fuzzy matching
 - Property display (industry, country, identifiers, etc.)
 - Relationship graph (related companies, people, orgs)
@@ -20,10 +21,10 @@ Key features:
 
 ## Configuration
 
-| Setting        | Value                                       |
-| -------------- | ------------------------------------------- |
-| Authentication | Auth0                                       |
-| Query Server   | https://query.news.prod.g.lovelace.ai       |
+| Setting        | Value                                 |
+| -------------- | ------------------------------------- |
+| Authentication | Auth0                                 |
+| Query Server   | https://query.news.prod.g.lovelace.ai |
 
 ## Pages
 
@@ -42,6 +43,7 @@ Description: Dashboard for a single entity. Tabs or sections for: Overview (prop
 Implementation status: Not started
 
 Details:
+
 - Properties via `getPropertyValues()` -- discover available PIDs with `getSchema()` first
 - Relationships via the relationships endpoint
 - Events via the events endpoint
